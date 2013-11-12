@@ -1,6 +1,31 @@
 # MatrixDdLppT16
 
-TODO: Write a gem description
+~/prct09$ tree
+ 
+├── bin
+│   └── matrix_dd_lpp_t16
+├── Gemfile
+├── Guardfile
+├── lib
+│   ├── matrix_dd_lpp_t16
+│   │   └── version.rb
+│   └── matrix_dd_lpp_t16.rb
+├── LICENSE.txt
+├── matrix_dd_lpp_t16.gemspec
+├── Rakefile
+├── README.md
+└── spec
+    ├── matrix_dd_lpp-t16_spec.rb
+    └── spec_helper.rb
+
+Jerarquia de clases ( creación de matrices )
+
+-Definiremos una clase para las Matrices densas, en las que definiremos sus métodos.
+-Se creara una matriz dispersa que hereda de la anterior ( Matrices densas ), en las que estaran definidos los metodos, para trabajar con las matrices.
+
+class Matriz_Densa
+
+class Matriz_Dispersa < Matriz_Densa
 
 ## Installation
 
