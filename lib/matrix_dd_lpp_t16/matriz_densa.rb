@@ -59,5 +59,18 @@ module MatrixDdLppT16
       end
       c
     end
+
+# Multiplicacion
+    def *(other)
+        c = Matriz_Densa.new(@filas, other.columnas)
+        for i in 0...@filas
+          for j in 0...@columnas
+            for k in 0...@columnas
+              c.set(i, j, get(i, k) * other.get(k,j) + c.get(i,j))
+            end          
+          end        
+        end
+        c
+    end
 end
 end
