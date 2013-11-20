@@ -62,4 +62,13 @@ describe MatrixDdLppT16::Matriz_Densa do
                 (@m1*@m2).to_s.should eq(@m3.to_s)
         end
     end
+    describe " # max y min " do
+        it " # Maximo de una matriz" do
+                @m1.max.should == 4
+        end
+        it " # Minimo de una matriz" do
+                @m1.min.should == 1
+        end
+    end
+
 end
