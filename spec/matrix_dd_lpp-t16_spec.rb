@@ -33,7 +33,7 @@ describe MatrixDdLppT16::Matriz_Densa do
     end
 
     describe " # Operaciones con matrices densas. " do
-        it " # Debe poderse sumar dos matrices " do
+        it " # Sumar dos matrices " do
                 @m3 = MatrixDdLppT16::Matriz_Densa.new(2,2)
                 @m3.set(0,0,2)
                 @m3.set(0,1,4)
@@ -43,7 +43,7 @@ describe MatrixDdLppT16::Matriz_Densa do
                 (@m1+@m2).to_s.should eq(@m3.to_s)
         end
 
-        it " # Debe poderse restar dos matrices " do
+        it " # Restar dos matrices " do
                 @m3 = MatrixDdLppT16::Matriz_Densa.new(2,2)
                 @m3.set(0,0,0)
                 @m3.set(0,1,0)
@@ -51,6 +51,15 @@ describe MatrixDdLppT16::Matriz_Densa do
                 @m3.set(1,1,0)
 
                 (@m2-@m1).to_s.should eq(@m3.to_s)
+        end
+	it " # Multiplicar dos matrices " do
+                @m3 = MatrixDdLppT16::Matriz_Densa.new(2,2)
+                @m3.set(0,0,7)
+                @m3.set(0,1,10)
+                @m3.set(1,0,15)
+                @m3.set(1,1,22)
+
+                (@m1*@m2).to_s.should eq(@m3.to_s)
         end
     end
 end
