@@ -78,7 +78,55 @@ module MatrixDdLppT16
       output
     end
 
+    #Metodo Suma
 
+def +(other)
+      c = Matriz_Densa.new(@filas, @columnas)
+      for i in 0...@filas
+        for j in 0...@columnas
+          c.set(i, j, get(i,j) + other.get(i,j))
+        end
+      end
+
+      if(c.num_nulos > 0.6)
+        c = Matriz_Dispersa.copy(c)
+      end
+      c
+    end
+
+#Metodo Resta
+
+    def -(other)
+      c = Matriz_Densa.new(@filas, @columnas)
+      for i in 0...@filas
+        for j in 0...@columnas
+          c.set(i, j, get(i,j) - other.get(i,j))
+        end
+      end
+
+      if(c.num_nulos > 0.6)
+        c = Matriz_Dispersa.copy(c)
+      end
+      c
+    end
+
+#Metodo Multiplicacion
+
+    def *(other)
+      c = Matriz_Densa.new(@filas, other.columnas)
+      for i in 0...@filas
+        for j in 0...other.columnas
+         for k in 0...@columnas
+          c.set(i, j, get(i, k) * other.get(k,j) + c.get(i,j))
+        end
+      end
+    end 
+
+    if(c.num_nulos > 0.6)
+      c = Matriz_Dispersa.copy(c)
+    end
+    c
+    end
 
   end
 end
