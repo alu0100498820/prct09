@@ -14,18 +14,36 @@ module MatrixDdLppT16
     end
 
 
- # Get (Devuelve el valor guardado del elemento en i,j)
+ # (Devuelve el valor del elemento en la posision i,j)
     def get(i, j)
       @pos[i][j]
     end
 
- # Set (Modifica el valor guardado del elemento en i,j)
+ # (Modifica el valor del elemento en la posicion i,j)
     def set(i, j, val)
       @pos[i][j] = val
     end
 
+ # Numeros nulos
+    def num_nulos
+      total = @filas*@columnas
+      cont = 0
+
+      for i in 0...@filas
+         for j in 0...@columnas
+           if(@pos[i][j] != 0)
+             cont += 1
+           end
+         end
+       end
+
+      res = total - cont
+      res.to_f/total.to_f
+
+    end
+
  
-#Metodo to_s  
+ # Metodo to_s  
     def to_s
       s = ""
       for i in 0...@filas
@@ -49,7 +67,7 @@ module MatrixDdLppT16
       c
     end
 
-# Resta        
+ # Resta        
     def -(other)
       c = Matriz_Densa.new(@filas, @columnas)
       for i in 0...@filas
@@ -72,7 +90,7 @@ module MatrixDdLppT16
         end
         c
     end
-#Maximo
+ # Maximo
     def max
         max = get(0,0)
         for i in 0...@filas
@@ -85,7 +103,7 @@ module MatrixDdLppT16
         max
     end
 
-#Minimo
+ # Minimo
     def min
         min = get(0,0)
 	for i in 0...@filas
