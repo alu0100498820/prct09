@@ -98,5 +98,57 @@ describe MatrixDdLppT16::Matriz_Dispersa do
         end
     end
 
+    describe " # Operaciones matrices dispersas. " do
+        it " # Sumar dos matrices " do
+                @md3 = MatrixDdLppT16::Matriz_Dispersa.new(3,2)
+
+                @md3.set(0,0,0)
+                @md3.set(0,1,0)
+
+                @md3.set(1,0,1)
+                @md3.set(1,1,3)
+
+                @md3.set(2,0,0)
+                @md3.set(2,1,0)
+
+                (@md1+@md2).to_s.should eq(@md3.to_s)
+        end
+        it " # Restar dos matrices " do
+                @md3 = MatrixDdLppT16::Matriz_Dispersa.new(3,2)
+                @md3.set(0,0,0)
+                @md3.set(0,1,0)
+
+                @md3.set(1,0,-1)
+                @md3.set(1,1,-3)
+
+                @md3.set(2,0,0)
+                @md3.set(2,1,0)
+
+                (@md2-@md1).to_s.should eq(@md3.to_s)
+        end
+        it " # Multiplicar dos matrices " do
+                @md4 = MatrixDdLppT16::Matriz_Dispersa.new(2,3)
+                @md4.set(1,0,-1)
+                @md4.set(1,1,-1)
+                @md4.set(1,2,0)
+
+                @md3 = MatrixDdLppT16::Matriz_Dispersa.new(3,3)
+                @md3.set(0,0,0)
+                @md3.set(0,1,0)
+                @md3.set(0,2,0)
+
+                @md3.set(1,0,-3)
+                @md3.set(1,1,-3)
+                @md3.set(1,2,0)
+
+                @md3.set(2,0,0)
+                @md3.set(2,1,0)
+                @md3.set(2,2,0)
+
+                (@md1*@md4).to_s.should eq(@md3.to_s)
+        end
+
+    end
+
 
 end

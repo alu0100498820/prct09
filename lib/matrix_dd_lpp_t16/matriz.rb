@@ -10,4 +10,8 @@ module MatrixDdLppT16
       @columnas=columnas
     end
   end
+	
+  def coerce(something)
+        [something, self]
+  end
 end

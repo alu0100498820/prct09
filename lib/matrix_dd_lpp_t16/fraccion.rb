@@ -24,5 +24,9 @@ module MatrixDdLppT16
 	  def to_s
 	    "#{@num}/#{@dem}"
 	  end
+
+	  def coerce(something)
+              [something, self]
+          end
 	end
 end
