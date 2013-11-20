@@ -72,5 +72,30 @@ module MatrixDdLppT16
         end
         c
     end
+#Maximo
+    def max
+        max = get(0,0)
+        for i in 0...@filas
+                for j in 0...@columnas
+                        if (get(i,j) > max)
+                                max = get(i,j)
+                        end
+                end
+        end
+        max
+    end
+
+#Minimo
+    def min
+        min = get(0,0)
+	for i in 0...@filas
+                 for j in 0...@columnas
+                        if (get(i,j) < min)
+                                min = get(i,j)
+                        end
+                end
+        end
+        min
+    end
 end
 end
