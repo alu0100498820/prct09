@@ -53,6 +53,32 @@ module MatrixDdLppT16
       end
     end
 
-  end
+# Numeros Nulos
+    def num_nulos
+       total = @filas*@columnas
+       cont = 0
 
+       for i in 0...@filas
+         cont += @pos[i].size
+       end
+
+       res = total - cont
+       res.to_f/total.to_f
+     end
+
+# to_s  
+
+    def to_s
+      output = ""
+      for i in 0...@filas
+        output += "Fila #{i}: "
+        @pos[i].sort.each{|k, v| output += "#{k}=>#{v} "}
+        output += "\n"
+      end
+      output
+    end
+
+
+
+  end
 end
