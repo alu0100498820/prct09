@@ -17,6 +17,7 @@ describe MatrixDdLppT16::Matriz_Densa do
         @m2.set(1,1,4)
 
     end
+
     describe " # Almacenamiento de matrices. " do
         it " # Debe poderse acceder a los datos almacenados en la matriz " do
             @m1.get(0,0).should eq(1)
@@ -31,7 +32,6 @@ describe MatrixDdLppT16::Matriz_Densa do
         end
 
     end
-
     describe " # Operaciones con matrices densas. " do
         it " # Sumar dos matrices " do
                 @m3 = MatrixDdLppT16::Matriz_Densa.new(2,2)
@@ -70,5 +70,33 @@ describe MatrixDdLppT16::Matriz_Densa do
                 @m1.min.should == 1
         end
     end
+end
+
+describe MatrixDdLppT16::Matriz_Dispersa do
+
+    before :each do
+        @m1 = MatrixDdLppT16::Matriz_Densa.new(3,2)
+
+        @m1.set(0,0,0)
+        @m1.set(0,1,0)
+
+        @m1.set(1,0,1)
+        @m1.set(1,1,3)
+
+        @m1.set(2,0,0)
+        @m1.set(2,1,0)
+
+        @md1 = MatrixDdLppT16::Matriz_Dispersa.copy(@m1)
+        @md2 = MatrixDdLppT16::Matriz_Dispersa.new(3,2)
+    end
+
+    describe " # Almacenamiento de matrices. " do
+
+        it " # Debe poderse crear matrices dispersas vacias o a partir de matrices densas." do
+            MatrixDdLppT16::Matriz_Dispersa.new(5, 5)
+            MatrixDdLppT16::Matriz_Dispersa.copy(@m1)
+        end
+    end
+
 
 end
