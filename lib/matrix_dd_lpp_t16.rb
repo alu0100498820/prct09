@@ -1,54 +1,8 @@
-require "matrix_dd_lpp_t16/version"
+require "./lib/matrix_dd_lpp_t16/version"
+require "./lib/matrix_dd_lpp_t16/matriz.rb"
+require "./lib/matrix_dd_lpp_t16/fraccion.rb"
 
-#module MatrixDdLppT16
- 
-class Matriz
-        
-        include Enumerable
-        
-        attr_reader :fil, :col, :matriz
 
-        def initialize(fil, col)
-                @fil = fil 
-		@col = col
-        end
-
+module MatrixDdLppT16
+  # Your code goes here...
 end
-#----------------------------------------------------------------
-
-class Matriz_Densa < Matriz
-
-  def initialize(fil, col)
-  end
-
-  def to_s()
-  end
-
-  def +(other)
-  end
-  
-  def *(other)
-  end
-
-end
-
-####################################################################
-
-class Matriz_Dispersa < Matriz
-
-  def initialize(fil, col)
-  end
-
-  def to_s()
-  end
-
-  def +(other)
-  end
-  
-  def *(other)
-  end
-
-end
-
-#---------------------------------------------------------------- 
-#end
