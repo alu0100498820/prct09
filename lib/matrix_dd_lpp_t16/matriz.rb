@@ -1,0 +1,13 @@
+require './lib/matrix_dd_lpp_t16/fraccion.rb'
+
+module MatrixDdLppT16
+  class Matriz
+    attr_reader :filas, :columnas
+    attr_accessor :pos
+
+    def initialize(filas, columnas)
+      @filas=filas
+      @columnas=columnas
+    end
+  end
+end
